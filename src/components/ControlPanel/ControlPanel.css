@@ -1,0 +1,182 @@
+/* ============================================
+   控制面板 — ECOPloit 品牌色
+   ============================================ */
+
+.control-panel {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(45, 106, 79, 0.07);
+  padding: 24px;
+  max-width: 480px;
+  width: 100%;
+}
+
+.control-panel h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1D3557; /* 科技深蓝 */
+  margin: 0 0 8px;
+}
+
+.control-panel .subtitle {
+  font-size: 12px;
+  color: #6C757D;
+  margin: 0 0 20px;
+}
+
+/* ---------- 状态按钮网格 ---------- */
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.status-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 8px;
+  border: 2px solid #E2E8F0;
+  border-radius: 12px;
+  background: #F8FAFC;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 12px;
+  color: #6C757D;
+}
+
+.status-btn:hover {
+  border-color: #00B4D8;
+  background: rgba(0, 180, 216, 0.05);
+  transform: translateY(-1px);
+}
+
+.status-btn.active {
+  border-color: #2D6A4F;
+  background: rgba(45, 106, 79, 0.08);
+  color: #2D6A4F;
+  box-shadow: 0 0 14px rgba(45, 106, 79, 0.15);
+}
+
+.status-btn .btn-icon {
+  font-size: 22px;
+}
+
+.status-btn .btn-label {
+  font-weight: 500;
+}
+
+/* ---------- 工作流模拟 ---------- */
+.workflow-section {
+  border-top: 1px solid rgba(45, 106, 79, 0.08);
+  padding-top: 16px;
+}
+
+.workflow-section h4 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1D3557;
+  margin: 0 0 10px;
+}
+
+.workflow-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.workflow-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid #E2E8F0;
+  background: #fff;
+  color: #475569;
+}
+
+.workflow-btn:hover {
+  border-color: #00B4D8;
+  background: rgba(0, 180, 216, 0.06);
+}
+
+.workflow-btn.primary {
+  background: #2D6A4F;
+  color: #F1FAEE;
+  border-color: #2D6A4F;
+}
+
+.workflow-btn.primary:hover {
+  background: #1B4D38;
+}
+
+/* ---------- 信息栏 ---------- */
+.info-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(45, 106, 79, 0.08);
+  font-size: 12px;
+  color: #6C757D;
+}
+
+.ws-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ws-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6C757D;
+}
+
+.ws-dot.connected {
+  background: #40916C; /* 合规翠绿 */
+}
+
+.sound-toggle {
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #E2E8F0;
+  background: #F8FAFC;
+  font-size: 12px;
+  transition: all 0.2s;
+  color: #6C757D;
+}
+
+.sound-toggle:hover {
+  background: rgba(45, 106, 79, 0.06);
+  border-color: #2D6A4F;
+}
+
+/* ---------- 移动端 ---------- */
+@media (max-width: 768px) {
+  .control-panel {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .status-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .status-btn {
+    padding: 10px 6px;
+    font-size: 11px;
+  }
+
+  .status-btn .btn-icon {
+    font-size: 18px;
+  }
+}

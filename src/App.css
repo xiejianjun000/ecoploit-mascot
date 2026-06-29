@@ -1,0 +1,108 @@
+/* ============================================
+   ECOPloit × 小E — 品牌色 UI 延伸
+   60% 数据白 · 30% 生态绿 · 10% 点缀色
+   ============================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  min-height: 100vh;
+  background: #F1FAEE; /* 数据白 */
+}
+
+/* ---------- Header ---------- */
+.app-header {
+  text-align: center;
+  padding: 40px 20px 24px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(45, 106, 79, 0.08);
+}
+
+.app-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1D3557; /* 科技深蓝 */
+  margin: 0 0 4px;
+  letter-spacing: -0.5px;
+}
+
+.app-header h1 .accent {
+  color: #00B4D8; /* 科技清流绿 */
+}
+
+.app-header .subtitle {
+  font-size: 14px;
+  color: #6C757D; /* 沉稳灰 */
+  font-weight: 400;
+}
+
+/* ---------- 主布局 ---------- */
+.app-main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 20px;
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.mascot-section {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.mascot-section .tip {
+  font-size: 12px;
+  color: #6C757D;
+  text-align: center;
+  max-width: 220px;
+  line-height: 1.6;
+  background: rgba(45, 106, 79, 0.04);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.control-section {
+  flex: 1;
+  max-width: 480px;
+}
+
+/* ---------- 移动端 ---------- */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 24px 16px 16px;
+  }
+
+  .app-header h1 {
+    font-size: 22px;
+  }
+
+  .app-main {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 16px;
+    gap: 24px;
+  }
+
+  .mascot-section {
+    order: 1;
+  }
+
+  .control-section {
+    order: 2;
+    width: 100%;
+  }
+}

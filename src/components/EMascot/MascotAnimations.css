@@ -1,0 +1,402 @@
+/* ============================================
+   小E吉祥物 — 10种状态动画定义
+   所有动画通过 CSS 实现，配合 SVG 组件
+   ============================================ */
+
+/* ---- 基础呼吸动画（共享） ---- */
+@keyframes breathe {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(1.03); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+@keyframes tailWag {
+  0%, 100% { transform: rotate(0deg); transform-origin: 175px 315px; }
+  25% { transform: rotate(3deg); transform-origin: 175px 315px; }
+  75% { transform: rotate(-3deg); transform-origin: 175px 315px; }
+}
+
+@keyframes earTwitch {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(0.85); }
+}
+
+@keyframes badgePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes helmetGlow {
+  0%, 100% { opacity: 0.75; }
+  50% { opacity: 0.95; }
+}
+
+@keyframes backpackData {
+  0% { transform: translateY(0); opacity: 0.7; }
+  100% { transform: translateY(-8px); opacity: 0; }
+}
+
+@keyframes screenPulse {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+/* ---- 思考动画 ---- */
+@keyframes thinkTap {
+  0%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-3px); }
+  60% { transform: translateY(1px); }
+}
+
+@keyframes leanForward {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(2px, 5px); }
+}
+
+@keyframes magnifierMove {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(-4px, -4px); }
+}
+
+/* ---- 警报动画 ---- */
+@keyframes alertShake {
+  0%, 100% { transform: translateX(0); }
+  10% { transform: translateX(-3px); }
+  30% { transform: translateX(3px); }
+  50% { transform: translateX(-2px); }
+  70% { transform: translateX(2px); }
+  90% { transform: translateX(-1px); }
+}
+
+@keyframes visorDrop {
+  0% { transform: translateY(-15px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes shieldExpand {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+/* ---- 成功动画 ---- */
+@keyframes jump {
+  0%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-25px); }
+  50% { transform: translateY(-28px); }
+  70% { transform: translateY(-5px); }
+}
+
+@keyframes confettiFall {
+  0% { transform: translateY(-40px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(50px) rotate(360deg); opacity: 0; }
+}
+
+@keyframes thumbBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.3); }
+}
+
+/* ---- 错误动画 ---- */
+@keyframes slumpDown {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(8px); }
+}
+
+@keyframes crackAppear {
+  0% { opacity: 0; stroke-dasharray: 20; stroke-dashoffset: 20; }
+  100% { opacity: 0.7; stroke-dashoffset: 0; }
+}
+
+@keyframes smokeRise {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  100% { transform: translateY(-25px) scale(1.5); opacity: 0; }
+}
+
+/* ---- 休眠动画 ---- */
+@keyframes sleepBreathe {
+  0%, 100% { transform: scaleY(0.97); }
+  50% { transform: scaleY(1); }
+}
+
+@keyframes zzzFloat {
+  0% { transform: translate(0, 0); opacity: 0; }
+  20% { opacity: 0.8; }
+  100% { transform: translate(-10px, -30px); opacity: 0; }
+}
+
+/* ---- 聆听动画 ---- */
+@keyframes bodyLeanForward {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); transform-origin: 150px 325px; }
+  50% { transform: translate(3px, 8px) rotate(2deg); transform-origin: 150px 325px; }
+}
+
+@keyframes backpackRipple {
+  0% { opacity: 1; }
+  50% { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+@keyframes earPerk {
+  0%, 100% { transform: scale(1) rotate(0deg); transform-origin: center bottom; }
+  50% { transform: scale(1.1) rotate(5deg); transform-origin: center bottom; }
+}
+
+/* ---- 回答动画 ---- */
+@keyframes handSwipe {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes textFly {
+  0% { transform: translate(0, 0); opacity: 1; }
+  100% { transform: translate(30px, -20px); opacity: 0; }
+}
+
+@keyframes tailRhythm {
+  0%, 100% { transform: rotate(0deg); transform-origin: 175px 315px; }
+  25% { transform: rotate(5deg); transform-origin: 175px 315px; }
+  75% { transform: rotate(-5deg); transform-origin: 175px 315px; }
+}
+
+/* ---- 问题彩蛋 ---- */
+@keyframes questionBounce {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(0.9); }
+}
+
+.question-float {
+  animation: questionBounce 0.6s ease-in-out infinite;
+}
+
+/* ============================================
+   状态动画组合类
+   ============================================ */
+
+/* === IDLE 待机 === */
+.mascot-svg.idle .mascot-body {
+  animation: breathe 3s ease-in-out infinite;
+}
+.mascot-svg.idle .mascot-tail {
+  animation: tailWag 4s ease-in-out infinite;
+}
+.mascot-svg.idle .mascot-eyes {
+  animation: blink 4s ease-in-out infinite;
+}
+.mascot-svg.idle .mascot-helmet {
+  animation: helmetGlow 2.5s ease-in-out infinite;
+}
+.mascot-svg.idle .mascot-badge {
+  animation: badgePulse 3s ease-in-out infinite;
+}
+.mascot-svg.idle .mascot-shadow-glow {
+  animation: helmetGlow 3s ease-in-out infinite;
+}
+.mascot-svg.idle .backpack-data-stream {
+  animation: backpackData 2s ease-in-out infinite;
+}
+.mascot-svg.idle .backpack-data-stream :nth-child(2) {
+  animation-delay: 0.3s;
+}
+.mascot-svg.idle .backpack-data-stream :nth-child(3) {
+  animation-delay: 0.6s;
+}
+.mascot-svg.idle .backpack-data-stream :nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+/* === LISTENING 聆听 === */
+.mascot-svg.listening .mascot-body {
+  animation: bodyLeanForward 0.6s ease-in-out infinite;
+}
+.mascot-svg.listening .mascot-head {
+  animation: leanForward 0.8s ease-in-out infinite;
+}
+.mascot-svg.listening .mascot-helmet {
+  animation: helmetGlow 1s ease-in-out infinite;
+}
+.mascot-svg.listening .backpack-data-stream {
+  animation: backpackRipple 0.8s ease-in-out infinite;
+}
+.mascot-svg.listening .mascot-eyes {
+  animation: blink 2s ease-in-out infinite;
+}
+/* 聆听时耳朵竖起来 */
+.mascot-svg.listening ellipse[cx="108"][cy="145"],
+.mascot-svg.listening ellipse[cx="192"][cy="145"] {
+  animation: earPerk 0.6s ease-in-out infinite;
+}
+
+/* === THINKING 思考 === */
+.mascot-svg.thinking .mascot-body {
+  animation: breathe 4s ease-in-out infinite;
+}
+.mascot-svg.thinking .mascot-head {
+  animation: thinkTap 1.2s ease-in-out infinite;
+}
+.mascot-svg.thinking .mascot-helmet {
+  animation: helmetGlow 1.5s ease-in-out infinite;
+}
+.mascot-svg.thinking .mascot-badge {
+  animation: badgePulse 2s ease-in-out infinite;
+}
+.mascot-svg.thinking .mascot-eyes {
+  animation: blink 3s ease-in-out infinite;
+}
+
+/* === ANSWERING 应答 === */
+.mascot-svg.answering .mascot-body {
+  animation: breathe 3s ease-in-out infinite;
+}
+.mascot-svg.answering .mascot-tail {
+  animation: tailRhythm 1.5s ease-in-out infinite;
+}
+.mascot-svg.answering .mascot-arms {
+  animation: handSwipe 0.6s ease-in-out infinite;
+}
+.mascot-svg.answering .mascot-virtual-screen {
+  animation: screenPulse 1.5s ease-in-out infinite;
+}
+.mascot-svg.answering .mascot-eyes {
+  animation: blink 5s ease-in-out infinite;
+}
+
+/* === WARNING 提醒 === */
+.mascot-svg.warning .mascot-body {
+  animation: breathe 4s ease-in-out infinite;
+}
+.mascot-svg.warning .mascot-magnifier {
+  animation: magnifierMove 1.5s ease-in-out infinite;
+}
+.mascot-svg.warning .mascot-helmet {
+  animation: helmetGlow 1s ease-in-out infinite;
+}
+.mascot-svg.warning .mascot-badge {
+  animation: badgePulse 1.5s ease-in-out infinite;
+}
+.mascot-svg.warning .mascot-eyes {
+  animation: blink 3s ease-in-out infinite;
+}
+
+/* === ALERT 警报 === */
+.mascot-svg.alert .mascot-body {
+  animation: alertShake 0.3s ease-in-out 3, breathe 2s ease-in-out 1.5s infinite;
+}
+.mascot-svg.alert .mascot-helmet-visor {
+  animation: visorDrop 0.3s ease-out forwards;
+}
+.mascot-svg.alert .mascot-tail {
+  animation: shieldExpand 0.4s ease-out forwards;
+}
+.mascot-svg.alert .mascot-badge {
+  animation: badgePulse 0.6s ease-in-out infinite;
+}
+.mascot-svg.alert .mascot-alert-light {
+  animation: badgePulse 0.5s ease-in-out infinite;
+}
+
+/* === SUCCESS 成功 === */
+.mascot-svg.success .mascot-svg {
+  animation: jump 0.6s ease-in-out 2;
+}
+.mascot-svg.success .mascot-body {
+  animation: jump 0.6s ease-in-out 2;
+}
+.mascot-svg.success .mascot-thumb {
+  animation: thumbBounce 0.4s ease-in-out 3;
+}
+.mascot-svg.success .mascot-badge {
+  animation: badgePulse 0.5s ease-in-out 6;
+}
+
+/* === ERROR 错误 === */
+.mascot-svg.error .mascot-body {
+  animation: slumpDown 0.5s ease-in-out forwards, breathe 3s ease-in-out 0.5s infinite;
+}
+.mascot-svg.error .mascot-helmet {
+  animation: alertShake 0.2s ease-in-out 2;
+  animation-delay: 0.5s;
+}
+.mascot-svg.error .mascot-badge {
+  animation: badgePulse 1s ease-in-out infinite;
+}
+
+/* === SLEEP 休眠 === */
+.mascot-svg.sleep .mascot-body {
+  animation: sleepBreathe 3.5s ease-in-out infinite;
+}
+.mascot-svg.sleep .mascot-tail {
+  animation: sleepBreathe 3.5s ease-in-out infinite;
+}
+.mascot-svg.sleep .mascot-helmet {
+  animation: helmetGlow 4s ease-in-out infinite;
+}
+
+/* ============================================
+   全局过渡效果
+   ============================================ */
+
+.mascot-svg {
+  transition: filter 0.5s ease;
+}
+
+.mascot-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 点击涟漪 */
+.mascot-container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.mascot-container:active::after {
+  animation: mascotRipple 0.4s ease-out;
+}
+
+@keyframes mascotRipple {
+  0% { box-shadow: 0 0 0 0 rgba(0, 180, 216, 0.4); }
+  100% { box-shadow: 0 0 0 40px rgba(0, 180, 216, 0); }
+}
+
+/* ============================================
+   对话气泡动画
+   ============================================ */
+
+@keyframes bubblePop {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.mascot-speech-bubble {
+  animation: bubblePop 0.3s ease-out forwards;
+}
+
+/* ============================================
+   彩蛋粒子
+   ============================================ */
+
+@keyframes easterEggSurprise {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.15); }
+  60% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
