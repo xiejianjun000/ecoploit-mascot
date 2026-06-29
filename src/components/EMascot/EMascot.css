@@ -1,5 +1,5 @@
 /* ============================================
-   小E吉祥物容器样式
+   小E容器样式 — 小黄人版 ✨
    ============================================ */
 
 .emascot-wrapper {
@@ -30,13 +30,13 @@
   transform: scale(0.97);
 }
 
-/* SVG 动画容器 */
+/* SVG 容器 */
 .emascot-svg-wrapper {
   width: 100%;
   height: 100%;
 }
 
-/* 状态标签 */
+/* ===== 状态标签 ===== */
 .emascot-status-label {
   display: flex;
   align-items: center;
@@ -58,7 +58,39 @@
   transition: background 0.3s ease;
 }
 
-/* 消息气泡 */
+/* 情绪徽章 */
+.emotion-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 159, 28, 0.12);
+  font-size: 13px;
+  animation: emotionPopIn 0.3s ease-out;
+}
+
+@keyframes emotionPopIn {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.2); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* 活动标签 */
+.activity-label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  animation: activitySlideIn 0.3s ease-out;
+}
+
+@keyframes activitySlideIn {
+  0% { opacity: 0; transform: translateX(-4px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+/* ===== 消息气泡 ===== */
 .emascot-message {
   max-width: 200px;
   padding: 8px 14px;
@@ -99,7 +131,7 @@
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* 移动端适配 */
+/* ===== 移动端适配 ===== */
 @media (max-width: 768px) {
   .emascot-container {
     width: 140px;
@@ -117,7 +149,7 @@
   }
 }
 
-/* 彩蛋动画 */
+/* ===== 彩蛋动画 ===== */
 .emascot-container.easter-egg--surprised {
   animation: easterEggSurprise 0.4s ease-in-out;
 }
